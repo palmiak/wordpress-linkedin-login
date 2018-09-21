@@ -47,7 +47,11 @@ require_once (PKLI_PATH.'/includes/lib/class-pkli-mods.php');
 $linkedin = new PkliLogin();
 $linkedin_mods = new Pkli_Mods();
 new PKLI_Settings();
-    
+  
+// Require Pkli_Frontend class
+if( !is_admin() ) {
+    require_once (PKLI_PATH.'/includes/lib/class-pkli-frontend.php');
+}
     
 /*
   * this function loads our translation files
